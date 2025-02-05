@@ -1,0 +1,141 @@
+.mainContainer {
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  .heroSection {
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+    padding: 80px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .mainTitle {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .ctaButton {
+    background-color: white !important;
+    color: #FB696D !important;
+    border: none !important;
+    padding: 12px 30px !important;
+    font-size: 1.1rem !important;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease !important;
+  }
+  
+  .ctaButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  .imageSection {
+    position: relative;
+    height: 400px;
+  }
+  
+  .gradientCircle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    right: -100px;
+    top: -50px;
+  }
+  
+  .featuresSection {
+    padding: 80px 0;
+    background-color: white;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    color: black;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  
+  .featureCard {
+    padding: 20px;
+  }
+  
+  .featureContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(251, 105, 109, 0.1);
+    height: 100%;
+    transition: transform 0.2s ease;
+  }
+  
+  .featureContent:hover {
+    transform: translateY(-5px);
+  }
+  
+  .featureContent h3 {
+    color: #FB696D;
+    margin-bottom: 1rem;
+  }
+  
+  .featureContent p {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .ctaSection {
+    background-color: #FFB5BA;
+    padding: 80px 0;
+    color: white;
+  }
+  
+  .registerButton {
+    background-color: white !important;
+    color: #FB696D !important;
+    border: none !important;
+    padding: 12px 40px !important;
+    font-size: 1.1rem !important;
+    border-radius: 30px !important;
+    margin-top: 2rem !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  @media (max-width: 768px) {
+    .mainTitle {
+      font-size: 2.5rem;
+    }
+  
+    .heroSection {
+      padding: 40px 0;
+    }
+  
+    .imageSection {
+      height: 200px;
+      margin-top: 40px;
+    }
+  
+    .gradientCircle {
+      width: 200px;
+      height: 200px;
+      right: -50px;
+      top: -25px;
+    }
+  
+    .featureCard {
+      margin-bottom: 20px;
+    }
+  }

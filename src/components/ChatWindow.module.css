@@ -1,0 +1,128 @@
+.chatContainer {
+  height: calc(100vh - 2rem);
+  max-width: 768px;
+  width: 30%;
+  margin: 1rem auto; 
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;  /* Ensure children don't overflow rounded corners */
+}
+
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+/* Rest of the styles remain the same */
+.messageList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.noMessages {
+  text-align: center;
+  color: #6c757d;
+  padding: 2rem;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+.messageWrapper.sent {
+  align-self: flex-end;
+}
+
+.messageWrapper.received {
+  align-self: flex-start;
+}
+
+.messageTime {
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin: 0.25rem 0;
+}
+
+.messageBubble {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.sent .messageBubble {
+  background-color: #FFB5BA;
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.received .messageBubble {
+  background-color: #e9ecef;
+  color: #212529;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.messageText {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.messageInputContainer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+}
+
+.messageInput {
+  flex: 1;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.messageInput:focus {
+  box-shadow: none;
+  border-color: #FFB5BA;
+}
+
+.sendButton {
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.messagesContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .chatContainer {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}

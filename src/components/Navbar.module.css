@@ -1,0 +1,97 @@
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+  }
+  
+  .brand {
+    color: #FB696D !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    transition: transform 0.2s ease;
+  }
+  
+  .brand:hover {
+    transform: translateY(-1px);
+  }
+  
+  .toggler {
+    border-color: #FB696D !important;
+  }
+  
+  .toggler:focus {
+    box-shadow: none !important;
+  }
+  
+  .navLink {
+    color: #333 !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    transition: all 0.2s ease !important;
+    border-radius: 20px;
+  }
+  
+  .navLink:hover {
+    color: #FB696D !important;
+    background-color: rgba(251, 105, 109, 0.1);
+  }
+  
+  .activeLink {
+    color: #FB696D !important;
+    background-color: rgba(251, 105, 109, 0.1);
+  }
+  
+  .authLinks {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .authLink {
+    color: #FB696D !important;
+  }
+  
+  .registerLink {
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 20px;
+    transition: transform 0.2s ease !important;
+  }
+  
+  .registerLink:hover {
+    transform: translateY(-1px);
+    color: white !important;
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 120%);
+  }
+  
+  .loginLink {
+    border: 2px solid #FB696D;
+    color: #FB696D !important;
+    padding: 8px 20px !important;
+    border-radius: 20px;
+  }
+  
+  .loginLink:hover {
+    background-color: rgba(251, 105, 109, 0.1);
+  }
+  
+  @media (max-width: 991px) {
+    .authLinks {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+  
+    .navLink {
+      padding: 0.7rem 1rem !important;
+    }
+  
+    .registerLink, 
+    .loginLink {
+      width: 100%;
+      text-align: center;
+      margin: 0.3rem 0;
+    }
+  }
