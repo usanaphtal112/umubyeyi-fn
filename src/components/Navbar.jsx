@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from './Navbar.module.css';
 
+const Logo = () => (
+  <div className={styles.logoContainer}>
+    <img src="/logo.svg" alt="Logo" className={styles.logoImage} />
+  </div>
+);
+
 const CustomNavbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
   const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogout = async () => {
     if (!token) {
@@ -33,43 +50,44 @@ const CustomNavbar = () => {
     }
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <Navbar className={styles.navbar} expand="lg" fixed="top">
+    <Navbar 
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`} 
+      expand="lg" 
+      fixed="top"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/" className={styles.brand}>
-          Umubyeyi
+          <Logo />
+          <span className={styles.brandText}>Umubyeyi</span>
         </Navbar.Brand>
+        
         <Navbar.Toggle 
           aria-controls="basic-navbar-nav" 
           className={styles.toggler}
         />
+        
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link 
-              as={Link} 
-              to="/" 
-              className={styles.navLink}
-              activeClassName={styles.activeLink}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link 
-              as={Link} 
-              to="/health-advisors" 
-              className={styles.navLink}
-              activeClassName={styles.activeLink}
-            >
-              Health Advisors
-            </Nav.Link>
-            <Nav.Link 
-              as={Link} 
-              to="/users" 
-              className={styles.navLink}
-              activeClassName={styles.activeLink}
-            >
-              General Users
-            </Nav.Link>
+          <Nav className={styles.mainNav}>
+            {[
+              { path: "/", label: "Home" },
+              { path: "/health-advisors", label: "Advisors" },
+              { path: "/users", label: "Community" },
+              { path: "/dashboard", label: "Dashboard" }
+            ].map(({ path, label }) => (
+              <Nav.Link 
+                key={path}
+                as={Link} 
+                to={path} 
+                className={`${styles.navLink} ${isActive(path) ? styles.activeLink : ''}`}
+              >
+                {label}
+              </Nav.Link>
+            ))}
           </Nav>
+          
           <Nav className={styles.authLinks}>
             {token ? (
               <Nav.Link 
@@ -82,17 +100,17 @@ const CustomNavbar = () => {
               <>
                 <Nav.Link 
                   as={Link} 
-                  to="/register" 
-                  className={`${styles.navLink} ${styles.registerLink}`}
-                >
-                  Register
-                </Nav.Link>
-                <Nav.Link 
-                  as={Link} 
                   to="/login" 
                   className={`${styles.navLink} ${styles.loginLink}`}
                 >
                   Login
+                </Nav.Link>
+                <Nav.Link 
+                  as={Link} 
+                  to="/register" 
+                  className={`${styles.navLink} ${styles.registerLink}`}
+                >
+                  Register
                 </Nav.Link>
               </>
             )}

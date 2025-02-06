@@ -1,105 +1,97 @@
 .container {
-    padding: 6rem 0 3rem;
-  }
-  
-  .title {
-    color: #333;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .loadingContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    gap: 1rem;
-    color: #666;
-  }
-  
-  .advisorsList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem 0;
-  }
-  
-  .advisorCard {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .advisorCard:hover {
-    transform: translateY(-5px);
-  }
-  
-  .avatarSection {
-    flex-shrink: 0;
-  }
-  
-  .avatar {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .advisorInfo {
-    flex-grow: 1;
-  }
-  
-  .advisorInfo h3 {
-    color: #333;
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .advisorInfo p {
-    color: #666;
-    margin: 0.5rem 0 0;
-    font-size: 0.9rem;
-  }
-  
-  .chatButton {
-    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .chatButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(251, 105, 109, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 5rem 1rem 2rem;
-    }
-  
-    .advisorCard {
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-  
-    .advisorInfo {
-      margin: 1rem 0;
-    }
-  }
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #FB696D;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loadingText {
+  color: #FB696D;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.advisorsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.advisorCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.advisorCard:hover {
+  transform: translateY(-5px);
+}
+
+.avatarSection {
+  margin-right: 1.5rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.advisorInfo {
+  flex: 1;
+}
+
+.advisorName {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.advisorPhone {
+  color: #666;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.chatButton {
+  background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.chatButton:hover {
+  opacity: 0.9;
+}

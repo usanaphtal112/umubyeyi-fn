@@ -1,0 +1,248 @@
+.dashboardContainer {
+    min-height: 100vh;
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .locationInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .locationWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .locationIcon {
+    opacity: 0.8;
+  }
+  
+  .locationLabel {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .locationValue {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .notificationButton {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .welcomeText {
+    color: #fff;
+    font-size: 24px;
+    margin: 24px 0;
+    font-weight: 500;
+  }
+  
+  .pregnancyCard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progressSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .progressCircle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .progressSvg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .progressCircleBackground {
+    fill: none;
+    stroke: #FFE5E5;
+    stroke-width: 3;
+  }
+  
+  .progressCircleForeground {
+    fill: none;
+    stroke: #FB696D;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+  }
+  
+  .progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .days {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FB696D;
+  }
+  
+  .daysLabel {
+    display: block;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .progressInfo {
+    flex: 1;
+  }
+  
+  .weekText {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .daysText {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .buttonGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .actionButton {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #FFB5BA;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .buttonIcon {
+    font-size: 16px;
+  }
+  
+  .categoriesSection {
+    margin-top: 24px;
+  }
+  
+  .categoriesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .categoriesTitle {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .viewAllLink {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .categoryCard {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoryIcon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .categoryName {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .recommendedSection {
+    margin-top: 24px;
+  }
+  
+  .recommendedGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .recommendedCard {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .recommendedImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .bookmarkButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .bookmarkIcon {
+    font-size: 20px;
+  }

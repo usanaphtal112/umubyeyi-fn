@@ -71,8 +71,8 @@ const HealthAdvisors = () => {
   if (loading) {
     return (
       <div className={styles.loadingContainer}>
-        <Spinner animation="border" variant="primary" />
-        <p>Loading health advisors...</p>
+        <Spinner animation="border" style={{ color: '#FB696D' }} />
+        <p className={styles.loadingText}>Loading health advisors...</p>
       </div>
     );
   }
@@ -91,8 +91,8 @@ const HealthAdvisors = () => {
               </div>
             </div>
             <div className={styles.advisorInfo}>
-              <h3>{advisor.first_name} {advisor.last_name}</h3>
-              <p>{advisor.phone_number}</p>
+              <h3 className={styles.advisorName}>{advisor.first_name} {advisor.last_name}</h3>
+              <p className={styles.advisorPhone}>{advisor.phone_number}</p>
             </div>
             <button 
               className={styles.chatButton}

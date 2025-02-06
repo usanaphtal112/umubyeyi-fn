@@ -1,0 +1,83 @@
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    color: #FB696D;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .usersList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .userCard {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .userCard:hover {
+    transform: translateX(5px);
+  }
+  
+  .avatarSection {
+    margin-right: 1.5rem;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .userInfo {
+    flex: 1;
+  }
+  
+  .userName {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .userPhone {
+    color: #666;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+  }
+  
+  .chatButton {
+    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .chatButton:hover {
+    opacity: 0.9;
+  }

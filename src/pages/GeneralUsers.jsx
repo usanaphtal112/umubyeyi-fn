@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Container, ListGroup, Button, Alert } from 'react-bootstrap';
+import { Container, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import styles from './GeneralUsers.module.css';
 
 const GeneralUsers = () => {
   const [users, setUsers] = useState([]);
@@ -29,7 +30,6 @@ const GeneralUsers = () => {
 
   const handleChat = async (userId) => {
     try {
-      // Check for existing conversation
       const checkResponse = await axios.get(
         `http://localhost:8000/api/v1/chat/conversations/direct/${userId}/`,
         {
@@ -38,17 +38,13 @@ const GeneralUsers = () => {
           },
         }
       );
-      // Debug: Log the check response
-      console.log('Check conversation response:', checkResponse.data);
 
       if (checkResponse.status === 200) {
-        console.log('Navigating to chat with conversation ID:', checkResponse.data.id);
         navigate(`/chat/${checkResponse.data.id}`);
         return;
       }
     } catch (error) {
       if (error.response?.status === 404) {
-        // Create new conversation if not exists
         try {
           const createResponse = await axios.post(
             `http://localhost:8000/api/v1/chat/conversations/direct/${userId}/`,
@@ -59,9 +55,6 @@ const GeneralUsers = () => {
               },
             }
           );
-          // 4. Navigate to new conversation
-          const conversationId = createResponse.data.id;
-          console.log('Navigating to new conversation:', conversationId);
           navigate(`/chat/${createResponse.data.id}`);
         } catch (createError) {
           setError('Failed to start conversation');
@@ -75,28 +68,30 @@ const GeneralUsers = () => {
   };
 
   return (
-    <Container className="mt-5">
-      <h2>Available Users</h2>
+    <Container className={styles.container}>
+      <h2 className={styles.title}>Available Users</h2>
       {error && <Alert variant="danger">{error}</Alert>}
-      <ListGroup>
+      <div className={styles.usersList}>
         {users.map(user => (
-          <ListGroup.Item 
-            key={user.id} 
-            className="d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <h5>{user.first_name} {user.last_name}</h5>
-              <p className="text-muted">{user.phone_number}</p>
+          <div key={user.id} className={styles.userCard}>
+            <div className={styles.avatarSection}>
+              <div className={styles.avatar}>
+                {user.first_name[0]}{user.last_name[0]}
+              </div>
             </div>
-            <Button 
-              variant="primary" 
+            <div className={styles.userInfo}>
+              <h3 className={styles.userName}>{user.first_name} {user.last_name}</h3>
+              <p className={styles.userPhone}>{user.phone_number}</p>
+            </div>
+            <button 
+              className={styles.chatButton}
               onClick={() => handleChat(user.id)}
             >
               Start Chat
-            </Button>
-          </ListGroup.Item>
+            </button>
+          </div>
         ))}
-      </ListGroup>
+      </div>
     </Container>
   );
 };

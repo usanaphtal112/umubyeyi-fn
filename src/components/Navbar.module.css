@@ -1,97 +1,170 @@
 .navbar {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
+  background: white;
+  padding: 0.8rem 0;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 0;
+}
+
+.logoContainer {
+  background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+  width: 70px;
+  height: 70px;
+  padding: 7.29px 0 0 0;
+  border-radius: 14.59px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.logoImage {
+  width: 26.98px;
+  height: 54.7px;
+  transform: rotate(180deg);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.brandText {
+  color: #FB696D;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.brand:hover .brandText {
+  color: #e85f63;
+}
+
+.mainNav {
+  margin-left: 2rem;
+}
+
+.toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.toggler:focus {
+  box-shadow: none;
+}
+
+.navLink {
+  color: #4a4a4a;
+  font-weight: 500;
+  padding: 0.7rem 1.2rem;
+  margin: 0 0.3rem;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #FB696D;
+  background-color: rgba(251, 105, 109, 0.08);
+}
+
+.activeLink {
+  color: #FB696D;
+  background-color: rgba(251, 105, 109, 0.1);
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+  border-radius: 2px;
+}
+
+.authLinks {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.loginLink {
+  border: 2px solid #FB696D;
+  color: #FB696D;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.loginLink:hover {
+  background-color: rgba(251, 105, 109, 0.08);
+  transform: translateY(-1px);
+}
+
+.registerLink {
+  background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.registerLink:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  color: white;
+}
+
+@media (max-width: 991px) {
+  .mainNav {
+    margin-left: 0;
+    margin-top: 1rem;
   }
-  
-  .brand {
-    color: #FB696D !important;
-    font-size: 1.5rem !important;
-    font-weight: bold !important;
-    transition: transform 0.2s ease;
-  }
-  
-  .brand:hover {
-    transform: translateY(-1px);
-  }
-  
-  .toggler {
-    border-color: #FB696D !important;
-  }
-  
-  .toggler:focus {
-    box-shadow: none !important;
-  }
-  
-  .navLink {
-    color: #333 !important;
-    font-weight: 500 !important;
-    padding: 0.5rem 1rem !important;
-    margin: 0 0.2rem;
-    transition: all 0.2s ease !important;
-    border-radius: 20px;
-  }
-  
-  .navLink:hover {
-    color: #FB696D !important;
-    background-color: rgba(251, 105, 109, 0.1);
-  }
-  
-  .activeLink {
-    color: #FB696D !important;
-    background-color: rgba(251, 105, 109, 0.1);
-  }
-  
+
   .authLinks {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    flex-direction: column;
+    width: 100%;
   }
-  
-  .authLink {
-    color: #FB696D !important;
-  }
-  
+
+  .loginLink,
   .registerLink {
-    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 164.02%);
-    color: white !important;
-    padding: 8px 20px !important;
-    border-radius: 20px;
-    transition: transform 0.2s ease !important;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  .logoContainer {
+    width: 80px;
+    height: 76px;
+  }
+
+  .logoImage {
+    width: 22px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand {
+    max-width: 200px;
   }
   
-  .registerLink:hover {
-    transform: translateY(-1px);
-    color: white !important;
-    background: linear-gradient(79.45deg, #FB696D 6.32%, #FFB5BA 120%);
+  .brandText {
+    font-size: 1.2rem;
   }
-  
-  .loginLink {
-    border: 2px solid #FB696D;
-    color: #FB696D !important;
-    padding: 8px 20px !important;
-    border-radius: 20px;
-  }
-  
-  .loginLink:hover {
-    background-color: rgba(251, 105, 109, 0.1);
-  }
-  
-  @media (max-width: 991px) {
-    .authLinks {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-  
-    .navLink {
-      padding: 0.7rem 1rem !important;
-    }
-  
-    .registerLink, 
-    .loginLink {
-      width: 100%;
-      text-align: center;
-      margin: 0.3rem 0;
-    }
-  }
+}
